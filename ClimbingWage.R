@@ -28,22 +28,22 @@ Climbing_Wage %>%
              aes(x = State_N, 
                  y = Primary_Clean, 
                  color = Main_Clean),
-             size = 4) +
-  scale_color_brewer(palette = "Set2") +
-  coord_flip() +
+             size = 3) +
   scale_y_continuous(limits = c(5, 40), 
                      breaks = (seq(from = 5, to = 40, by = 5)),
                      labels = c(paste0("$",seq(from = 5, to = 40, by = 5)))) +
+  coord_flip() +
+  scale_color_brewer(palette = "Set2") +
   theme_classic() +
   theme(axis.line.x = element_line(color = "#3b3d3d", size = 1, linetype = "solid"),
         axis.line.y = element_blank(),
         axis.ticks = element_blank(),
         axis.title = element_blank(),
-        plot.title = element_text(face = "bold", size = 15),
-        plot.subtitle = element_text(size = 15),
+        plot.title = element_text(face = "bold", size = 14),
+        plot.subtitle = element_text(size = 13),
         panel.background = element_rect(fill = "#f5f1e6"),
         panel.grid.major.x = element_line(linetype = "dashed", color = "white"),
-        text = element_text(size = 14, family = "serif", color = "#3b3d3d")) +
+        text = element_text(size = 12, family = "serif", color = "#3b3d3d")) +
   labs(title = "Climbing Salaries",
        subtitle = "By Primary Job & State",
        color = "Primary Job")
