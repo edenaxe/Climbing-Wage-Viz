@@ -3,10 +3,10 @@ library(tidyverse)
 # Load cleaned up version of the raw Climbing Salary Data from Reddit
 # Add count and a state + count (y-axis label) columns 
 Climbing_Wage <- read.csv("FTClimbingSalary_Clean.csv") %>%
-  mutate(Count = map(.x = State_Clean, 
-                     .f = ~table(Climbing_Wage$State_Clean)[.]),
+  mutate(Count = map_int(.x = State_Clean, 
+                     .f = ~table(State_Clean)[.]),
          State_N = case_when(
-           Count > 2 ~ paste0(State_Clean, " (N = ", parse_number(as.character(Count)), ")"),
+           Count > 2 ~ paste0(State_Clean, " (N = ", Count, ")"),
            Count <= 2 ~ "Other (N = 15)"))
 
 # Create the lollipop chart
