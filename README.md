@@ -7,7 +7,7 @@ Data was pulled from an anonymous form posted on Reddit in July of 2020 ([link](
 <br/>
 
  <figure>
-   <img src="images/ClimbingSalaries_PlotV2.png" 
+   <img src="images/ClimbingSalaries_PlotV3.png" 
         width="100%" height="100%"
     <figcaption>Figure 1. Final plot (screenshot)</figcaption>
 </figure>
