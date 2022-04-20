@@ -30,7 +30,7 @@ Climbing_Wage %>%
                    yend = Max), 
                color = "gray", 
                size = 2) +
-  # Add points along the segmen where colors correspond to the primary job type
+  # Add points along the segment where colors correspond to the primary job type
   geom_point(data = Climbing_Wage,
              aes(x = State_N, 
                  y = Primary_Clean, 
@@ -42,7 +42,7 @@ Climbing_Wage %>%
                      labels = c(paste0("$",seq(from = 5, to = 40, by = 5)))) +
   # Flip the coordinates
   coord_flip() +
-  # Adjust color palette 
+  # Adjust the color palette to brewer Set2
   scale_color_brewer(palette = "Set2") +
   # Make thematic changes with classic as a starting point
   theme_classic() +
