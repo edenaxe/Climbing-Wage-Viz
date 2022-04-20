@@ -30,7 +30,12 @@ CW_Table %>%
          State_N = fct_reorder(State_N, Max)) %>%
   arrange(desc(Mean)) %>%
   ggplot() +
-  geom_segment(aes(x = State_N, xend = State_N, y = Min, yend = Max), color = "gray", size = 2) +
+  geom_segment(aes(x = State_N, 
+                   xend = State_N, 
+                   y = Min, 
+                   yend = Max), 
+               color = "gray", 
+               size = 2) +
   geom_point(data = left_join(Climbing_Wage, CW_Table, by = "State_Clean"),
              aes(x = State_N, 
                  y = Primary_Clean, 
@@ -38,7 +43,6 @@ CW_Table %>%
                  size = 4) +
   scale_color_brewer(palette = "Set2") +
   ylim(0, 45) +
-  scale_y_continuous(labels=scales::dollar_format()) +
   coord_flip() +
   scale_y_continuous(limits = c(5, 40), 
                      breaks = (seq(from = 5, to = 40, by = 5)),
@@ -53,8 +57,7 @@ CW_Table %>%
         panel.background = element_rect(fill = "#f5f1e6"),
         panel.grid.major.x = element_line(linetype = "dashed", color = "white"),
         text = element_text(size = 14, family = "serif", color = "#3b3d3d")) +
-  labs(x = "", y = "Hourly Wage (USD)", 
-       title = "Climbing Salaries",
+  labs(title = "Climbing Salaries",
        subtitle = "By Primary Job & State",
        color = "Primary Job")
 
