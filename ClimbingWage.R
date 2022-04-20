@@ -48,4 +48,6 @@ Climbing_Wage %>%
        subtitle = "By Primary Job & State",
        color = "Primary Job")
 
+# Export/save the plot
+ggsave("CW_lollipop.png", units = "in", width = 11, height = 6, dpi = 350)
 dev.off()
