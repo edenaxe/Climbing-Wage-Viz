@@ -4,7 +4,7 @@ library(tidyverse)
 # Add count and a state + count (y-axis label) columns 
 Climbing_Wage <- read.csv("FTClimbingSalary_Clean.csv") %>%
   mutate(Count = map_int(.x = State_Clean, 
-                     .f = ~table(State_Clean)[.]),
+                         .f = ~table(State_Clean)[.]),
          State_N = case_when(
            Count > 2 ~ paste0(State_Clean, " (N = ", Count, ")"),
            Count <= 2 ~ "Other (N = 15)"))
@@ -28,7 +28,7 @@ Climbing_Wage %>%
              aes(x = State_N, 
                  y = Primary_Clean, 
                  color = Main_Clean),
-                 size = 4) +
+             size = 4) +
   scale_color_brewer(palette = "Set2") +
   coord_flip() +
   scale_y_continuous(limits = c(5, 40), 
