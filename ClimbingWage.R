@@ -17,7 +17,6 @@ Climbing_Wage %>%
             Max = max(Primary_Clean)) %>%
   mutate(across(.cols = 2:4, .fns = round, digits = 2),
          State_N = fct_reorder(State_N, Max)) %>%
-  arrange(desc(Mean)) %>%
   ggplot() +
   geom_segment(aes(x = State_N, 
                    xend = State_N, 
