@@ -12,5 +12,12 @@ Data was pulled from an anonymous form posted on Reddit in July of 2020 ([link](
     <figcaption>Figure 1. Final plot (screenshot)</figcaption>
 </figure>
 
-
 <br/>
+
+<br/>  
+
+ <figure>
+   <img src="images/ClimbingSalary_Vid.gif" 
+        width="100%" height="100%"
+    <figcaption>Figure 2. GIF of interactive plotly version </figcaption>
+</figure>
