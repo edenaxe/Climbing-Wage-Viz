@@ -5,7 +5,7 @@ library(tidyverse)
 
 ### Load cleaned up version of the raw Climbing Salary Data from Reddit ###
 
-Climbing_Wage <- read.csv("C:\\Users\\eaxelrad\\Desktop\\Climbing-Wage-Viz-main\\FTClimbingSalary_Clean.csv") %>%
+Climbing_Wage <- read.csv("FTClimbingSalary_Clean.csv") %>%
   # Add count column and a state + count (y-axis label) column 
   mutate(Count = map_int(.x = State_Clean, 
                          .f = ~table(State_Clean)[.]),
